@@ -1,0 +1,28 @@
+<div class="col-md-6">
+  <table class="table table-striped">
+    <thead class="thead-dark"></thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Dept Id</th>
+      <th>Country</th>
+      <th>State</th>
+    </tr>
+
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.company }}</td>
+        <td>{{ employee.deptid }}</td>
+        <td>{{ employee.country }}</td>
+        <td>{{ employee.state }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<li>
+  <a routerLink="/addemployee" class="nav-link">Add New Employee</a>
+</li>

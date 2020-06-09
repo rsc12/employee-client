@@ -1,0 +1,80 @@
+<div class="col-md-6">
+  <h2 class="text-center">Add Employee</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="name"
+        [(ngModel)]="user.name"
+        placeholder="Name"
+        name="name"
+        class="form-control"
+        id="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company:</label>
+      <input
+        [(ngModel)]="user.company"
+        placeholder="Company"
+        name="company"
+        class="form-control"
+        id="company"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="deptid">Department Id</label>
+      <input
+        type="number"
+        [(ngModel)]="user.deptid"
+        placeholder="Department Id"
+        name="department Id"
+        class="form-control"
+        id="departmentid"
+      />
+    </div>
+    <div class="form-group">
+      <label for="country">Country:</label>
+      <!-- <input
+        [(ngModel)]="user.country"
+        placeholder="Country"
+        name="country"
+        class="form-control"
+        id="country"
+      /> -->
+      <select
+        [(ngModel)]="user.country"
+        placeholder="Country"
+        (change)="changeCountry($event.target.value)"
+        name="country"
+        class="form-control"
+        id="country"
+      >
+        <option *ngFor="let count of countryList">{{ count.name }} </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="state">State:</label>
+      <!-- <input
+        [(ngModel)]="user.state"
+        placeholder="State"
+        name="state"
+        class="form-control"
+        id="state"
+      /> -->
+      <select
+        [(ngModel)]="user.state"
+        placeholder="State"
+        name="state"
+        class="form-control"
+        id="state"
+      >
+        <option *ngFor="let state of states">{{ state }} </option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" (click)="createEmployee()">Create</button>
+  </form>
+</div>
